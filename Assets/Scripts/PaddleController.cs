@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PaddleController : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] float speed;
+    [SerializeField] float direction;
+    [SerializeField] float adjustSpeed;
 
-    public float direction;
-    public float adjustSpeed;
-
-    public Transform rightLimit ;
-    public Transform leftLimit;
+    [SerializeField] Transform rightLimit;
+    [SerializeField] Transform leftLimit;
 
     // Start is called before the first frame update
     void Start()
