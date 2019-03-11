@@ -1,17 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    private BallController theBall;
-
     [SerializeField] bool gameActive;
+    [SerializeField] Text livesText;
+    [SerializeField] int lives;
+
+    private BallController theBall;
 
     // Start is called before the first frame update
     void Start()
     {
         theBall = FindObjectOfType<BallController>();
+
+        livesText.text = "LIVES REMAINING: " + lives;
+
     }
 
     // Update is called once per frame
@@ -22,7 +28,15 @@ public class GameManager : MonoBehaviour
         {
             theBall.ActivateBall();
             gameActive = true;
-        }
-        
+        }       
+    }
+
+    public void RespawnBall()
+    {
+        gameActive = false;
+
+        // tracking lives
+        lives -= 1;
+        livesText.text = "LIVES REMAINING: " + lives;
     }
 }

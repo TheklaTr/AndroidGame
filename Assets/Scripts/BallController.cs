@@ -11,12 +11,13 @@ public class BallController : MonoBehaviour
     [SerializeField] Transform startPoint;
 
     private Rigidbody2D rigid;
-
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
 
         //rigid.velocity = new Vector2(vertSpeed, maxHorizontalSpeed);
     }
@@ -40,6 +41,24 @@ public class BallController : MonoBehaviour
         }
 
         Debug.Log(rigid.velocity);
+    }
+
+    // Destroy the bricks
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Brick")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Respawn")
+        {
+            ballActive = false;
+            gameManager.RespawnBall();
+        }
     }
 
     public void ActivateBall()
