@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] bool gameActive;
     [SerializeField] Text livesText;
     [SerializeField] int lives;
+    [SerializeField] GameObject gameOverScreen;
+    [SerializeField] int currentScore;
+    [SerializeField] Text scoreText;
 
     private BallController theBall;
 
@@ -17,6 +20,8 @@ public class GameManager : MonoBehaviour
         theBall = FindObjectOfType<BallController>();
 
         livesText.text = "LIVES REMAINING: " + lives;
+
+        scoreText.text = "SCORE: " + currentScore;
 
     }
 
@@ -37,6 +42,21 @@ public class GameManager : MonoBehaviour
 
         // tracking lives
         lives -= 1;
-        livesText.text = "LIVES REMAINING: " + lives;
+        if (lives < 0)
+        {
+            theBall.gameObject.SetActive(false);
+            gameOverScreen.SetActive(true);
+
+            livesText.text = "ALL LIVES LOST";
+        }
+        else 
+            livesText.text = "LIVES REMAINING: " + lives;   
+    }
+
+    public void AddScore(int ScoreToAdd)
+    {
+        currentScore += ScoreToAdd;
+
+        scoreText.text = "SCORE: " + currentScore;
     }
 }

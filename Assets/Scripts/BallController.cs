@@ -48,7 +48,8 @@ public class BallController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Brick")
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<BrickController>().DestroyBrick();
         }
     }
 

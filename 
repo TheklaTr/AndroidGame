@@ -1,0 +1,23 @@
+[33mcommit 13e0dfb72988eb207703417c51724332a710bbdc[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: TrHien <ttthuhien0104@gmail.com>
+Date:   Tue Mar 12 01:04:44 2019 +0200
+
+    Using tag for finding and destroying objects, tracking lives, respawning objects
+
+[33mcommit f2f3a65ee430fcbb59dbec7da72dd5222e0f6b22[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: TrHien <ttthuhien0104@gmail.com>
+Date:   Mon Mar 11 00:16:17 2019 +0200
+
+    Add code for Paddle and GameManager
+
+[33mcommit fbf86ab9f57f58ef13dd3a38e56bf8bb826ef405[m
+Author: TrHien <ttthuhien0104@gmail.com>
+Date:   Tue Mar 5 22:21:44 2019 +0200
+
+    Add files
+
+[33mcommit cfa85c02ff5ecc75d2f11ef14d7f4c904a02dc5c[m
+Author: TrHien <44194730+TrHien@users.noreply.github.com>
+Date:   Tue Mar 5 21:59:07 2019 +0200
+
+    Initial commit
