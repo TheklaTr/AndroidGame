@@ -119,4 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a43803b956ad5ed4a8a10ea65b9a0f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brickValue: 100
+  brickValue: 150
+  scoreEffect: {fileID: 7541982141800024411, guid: 2d2d74762deb4944e96885bbc8b01b1e,
+    type: 3}

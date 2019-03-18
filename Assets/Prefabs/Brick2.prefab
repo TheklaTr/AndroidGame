@@ -10,17 +10,12 @@ PrefabInstance:
     - target: {fileID: 7792676496648089556, guid: e18971e81de44fb488b808d579b6dd0f,
         type: 3}
       propertyPath: m_Name
-      value: Brick2 (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7792676496648089556, guid: e18971e81de44fb488b808d579b6dd0f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Brick
+      value: Brick2
       objectReference: {fileID: 0}
     - target: {fileID: 2763368028200470402, guid: e18971e81de44fb488b808d579b6dd0f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2763368028200470402, guid: e18971e81de44fb488b808d579b6dd0f,
         type: 3}
@@ -86,6 +81,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.98039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 1657720016, guid: e18971e81de44fb488b808d579b6dd0f, type: 3}
+      propertyPath: brickValue
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e18971e81de44fb488b808d579b6dd0f, type: 3}

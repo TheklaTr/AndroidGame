@@ -8,6 +8,8 @@ public class BrickController : MonoBehaviour
 
     private GameManager gameManager;
 
+    public GameObject scoreEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,9 @@ public class BrickController : MonoBehaviour
     public void DestroyBrick()
     {
         gameManager.AddScore(brickValue);
+
+        GameObject scoreObject = (GameObject)Instantiate(scoreEffect, transform.position, transform.rotation);
+        scoreObject.GetComponent<ScoreEffect>().scoreText.text = "" + brickValue;
 
         Destroy(gameObject);
     }
