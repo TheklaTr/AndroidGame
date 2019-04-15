@@ -13,6 +13,10 @@ public class BallController : MonoBehaviour
     private Rigidbody2D rigid;
     private GameManager gameManager;
 
+    [SerializeField] AudioSource ballBounce;
+    [SerializeField] AudioSource ballDead;
+    [SerializeField] AudioSource brickHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,10 +50,36 @@ public class BallController : MonoBehaviour
     // Destroy the bricks
     private void OnCollisionExit2D(Collision2D collision)
     {
+
+        if (ballBounce.isPlaying)
+        {
+            ballBounce.Stop();
+            ballBounce.Play();
+        }
+        else
+        {
+            ballBounce.Play();
+        }
+
         if (collision.gameObject.tag == "Brick")
         {
-            //Destroy(collision.gameObject);
             collision.gameObject.GetComponent<BrickController>().DestroyBrick();
+
+            if (brickHit.isPlaying)
+            {
+                brickHit.Stop();
+                brickHit.Play();
+            }
+            else
+            {
+                brickHit.Play();
+            }
+
+            gameManager.AddMultiplier();
+        }
+        else if (collision.gameObject.tag != "Player")
+        {
+            gameManager.ResetMultiplier();
         }
     }
 
@@ -59,12 +89,16 @@ public class BallController : MonoBehaviour
         {
             ballActive = false;
             gameManager.RespawnBall();
+
+            gameManager.ResetMultiplier();
+
+            ballDead.Play();
         }
     }
 
     public void ActivateBall()
     {
         ballActive = true;
-        rigid.velocity = new Vector2(vertSpeed, vertSpeed);
+        rigid.velocity = new Vector2(Random.Range(-vertSpeed, vertSpeed), vertSpeed);
     }
 }

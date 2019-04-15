@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreEffect : MonoBehaviour
 {
-    
-    public float lifetime;
+
+    [SerializeField] float lifetime;
 
     public Text scoreText;
 
